@@ -4,7 +4,7 @@ from PIL import Image
 import os
 
 # Page Defaults
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="Oil Spill Monitoring", layout="wide")
 
 # Page
 st.markdown(f"<h1 style= font-size:70px;text-align:'center';>Oil Spill Monitoring</h1><br>", unsafe_allow_html=True)
