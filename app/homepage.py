@@ -1,8 +1,12 @@
+# Import Modules
 import streamlit as st
 from PIL import Image
 import os
 
+# Page Defaults
+st.set_page_config(layout="wide")
 
+# Page
 st.markdown(f"<h1 style= font-size:70px;text-align:'center';>Oil Spill Monitoring</h1><br>", unsafe_allow_html=True)
 st.image(os.path.join("app", "untitled.png"), use_column_width=None) 
 st.markdown(f"<br><br><h3 style= font-size:50px;>Motivation</h3>", unsafe_allow_html=True)
