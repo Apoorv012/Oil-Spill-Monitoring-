@@ -18,7 +18,7 @@ col1.write("""
 - ##### health risks due to delay in cleaning as it requires large manpower use of booms and skimmers
 """)
 
-image = Image.open("app\image3.png")
+image = Image.open(os.path.join("app", "image3.png"))
 col2.image(image, width=600)
 
 st.markdown(f"<hr style=width:100%;text-align:left;margin-left:0;>", unsafe_allow_html=True)
@@ -38,7 +38,7 @@ col4.write("""
 - ##### Slick trajectory determination
 """)
 
-col3.image("app\image2.png",width= 550)
+col3.image(os.path.join("app", "image2.png"),width= 550)
 
 st.markdown(f"<hr style=width:100%;text-align:left;margin-left:0;>", unsafe_allow_html=True)
 st.markdown(f"<br><h3 style= font-size:50px;>Future Scope</h3>", unsafe_allow_html=True)
@@ -52,7 +52,7 @@ col1.write("""
 - ##### webpage in more regional languages
 """)
 
-image = Image.open("app\image1.png")
+image = Image.open(os.path.join)
 col2.image(image, width=600)
 
 
