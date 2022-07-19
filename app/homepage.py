@@ -52,7 +52,7 @@ col1.write("""
 - ##### webpage in more regional languages
 """)
 
-image = Image.open(os.path.join)
+image = Image.open(os.path.join("app", "image3.png"))
 col2.image(image, width=600)
 
 
