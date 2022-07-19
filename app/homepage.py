@@ -1,9 +1,10 @@
 import streamlit as st
 from PIL import Image
+import os
 
 
 st.markdown(f"<h1 style= font-size:70px;text-align:'center';>Oil Spill Monitoring</h1><br>", unsafe_allow_html=True)
-st.image("app\\untitled.png", use_column_width=None) 
+st.image(os.path.join("app", "untitled.png"), use_column_width=None) 
 st.markdown(f"<br><br><h3 style= font-size:50px;>Motivation</h3>", unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
