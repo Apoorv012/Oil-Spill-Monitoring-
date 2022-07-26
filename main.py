@@ -8,7 +8,7 @@ from streamlit_option_menu import option_menu
 import streamlit.components.v1 as html
 
 with st.sidebar:
-    choose = option_menu("Gallery", ["home", "Oil Spills Map", "Oil Spills Predict", ],
+    choose = option_menu("Gallery", ["Home", "Oil Spills Near me", "Oil Spills Detection", ],
                          icons=[],
                          menu_icon="app-indicator", default_index=0,
                          styles={
@@ -36,7 +36,7 @@ if choose=='home':
     - ##### health risks due to delay in cleaning as it requires large manpower use of booms and skimmers
     """)
 
-    image = Image.open(os.path.join("app", "image3.png"))
+    image = Image.open(os.path.join("app", "image1.png"))
     col2.image(image, width=600)
 
     st.markdown(f"<hr style=width:100%;text-align:left;margin-left:0;>", unsafe_allow_html=True)
@@ -50,7 +50,7 @@ if choose=='home':
     - ##### Direct support for oil spill countermeasures
     """)
 
-    col3.image(os.path.join("app", "image2.png"),width= 350)
+    col3.image(os.path.join("app", "image2.png"),width= 600)
 
     st.markdown(f"<hr style=width:100%;text-align:left;margin-left:0;>", unsafe_allow_html=True)
     st.markdown(f"<br><h3 style= font-size:50px;>Future Scope</h3>", unsafe_allow_html=True)
