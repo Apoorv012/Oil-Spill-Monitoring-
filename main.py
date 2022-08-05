@@ -8,23 +8,25 @@ from streamlit_option_menu import option_menu
 import streamlit.components.v1 as html
 
 with st.sidebar:
-    choose = option_menu("Gallery", ["Home", "Oil Spills Near me", "Oil Spills Detection", ],
+    choose = option_menu("Gallery", ["Home", "Oil Spills Near me", "Oil Spills Detection"],
                          icons=[],
                          menu_icon="app-indicator", default_index=0,
                          styles={
         "container": {"padding": "5!important", "background-color": "#fafafa"},
-        "icon": {"color": "orange", "font-size": "25px"}, 
-        "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+        "icon": {"color": "orange", "font-size": "25px"},
+        "nav-link": {"font-size": "16px", "text-align": "left", "margin": "0px", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "#02ab21"},
     }
     )
 
-if choose=='home':
+if choose == 'Home':
 
     # Page
-    st.markdown(f"<h1 style= font-size:70px;text-align:'center';>Oil Spill Monitoring</h1><br>", unsafe_allow_html=True)
-    st.image(os.path.join("app", "untitled.png"), use_column_width=None) 
-    st.markdown(f"<br><br><h3 style= font-size:50px;>Motivation</h3>", unsafe_allow_html=True)
+    st.markdown(f"<h1 style= font-size:70px;text-align:'center';>Oil Spill Monitoring</h1><br>",
+                unsafe_allow_html=True)
+    st.image(os.path.join("app", "untitled.png"), use_column_width=None)
+    st.markdown(f"<br><br><h3 style= font-size:50px;>Motivation</h3>",
+                unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
     col1.write("""
@@ -39,9 +41,11 @@ if choose=='home':
     image = Image.open(os.path.join("app", "image1.png"))
     col2.image(image, width=600)
 
-    st.markdown(f"<hr style=width:100%;text-align:left;margin-left:0;>", unsafe_allow_html=True)
+    st.markdown(f"<hr style=width:100%;text-align:left;margin-left:0;>",
+                unsafe_allow_html=True)
 
-    st.markdown(f"<h3 style= font-size:50px;>Our Idea/Solution</h3>", unsafe_allow_html=True)
+    st.markdown(f"<h3 style= font-size:50px;>Our Idea/Solution</h3>",
+                unsafe_allow_html=True)
     col3, col4 = st.columns(2)
     col4.write("""
     ##### An AI-based model to detect oil spills in the ocean or other bodies of water using satellite imagery.
@@ -50,10 +54,12 @@ if choose=='home':
     - ##### Direct support for oil spill countermeasures
     """)
 
-    col3.image(os.path.join("app", "image2.png"),width= 600)
+    col3.image(os.path.join("app", "image2.png"), width=600)
 
-    st.markdown(f"<hr style=width:100%;text-align:left;margin-left:0;>", unsafe_allow_html=True)
-    st.markdown(f"<br><h3 style= font-size:50px;>Future Scope</h3>", unsafe_allow_html=True)
+    st.markdown(f"<hr style=width:100%;text-align:left;margin-left:0;>",
+                unsafe_allow_html=True)
+    st.markdown(f"<br><h3 style= font-size:50px;>Future Scope</h3>",
+                unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
     col1.write("""
@@ -66,8 +72,7 @@ if choose=='home':
     col2.image(image, width=600)
 
 
-
-if choose=='Oil Spills Map':
+if choose == 'Oil Spills Near me':
     import streamlit as st
     import pandas as pd
     import numpy as np
@@ -84,14 +89,13 @@ if choose=='Oil Spills Map':
 
     st.title("Oil Spills Near Me")
 
-
     st.pydeck_chart(pdk.Deck(
         map_style='mapbox://styles/mapbox/satellite-v9',
         initial_view_state=pdk.ViewState(
             latitude=37.76,
             longitude=-122.4,
             zoom=2,
-            #pitch=50,
+            # pitch=50,
         ),
         layers=[
             # pdk.Layer(
@@ -115,25 +119,26 @@ if choose=='Oil Spills Map':
     ))
 
 
-
-if choose=='Oil Spills Predict':
+if choose == 'Oil Spills Detection':
     st.title('Oil Spill')
     st.subheader("Content Image")
-    main_image = st.file_uploader("Upload Images", type=["png", "jpg", "jpeg"], key='main_image')
+    main_image = st.file_uploader(
+        "Upload Images", type=["png", "jpg", "jpeg"], key='main_image')
 
     if main_image is not None:
         file_details = {"filename": main_image.name, "filetype": main_image.type,
                         "filesize": main_image.size}
         st.write(file_details)
         st.image(view_image(main_image), width=400)
-        with open(os.path.join("images",main_image.name),"wb") as f:
+        with open(os.path.join("images", main_image.name), "wb") as f:
             f.write((main_image).getbuffer())
 
     clicked = st.button('Check for oil spill')
 
     if clicked:
         if main_image is not None:
-            predictions = predict_image(os.path.join("images",main_image.name))
+            predictions = predict_image(
+                os.path.join("images", main_image.name))
             st.write('### Output image:')
             st.markdown(predictions, unsafe_allow_html=True)
         else:
