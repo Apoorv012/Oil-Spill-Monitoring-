@@ -7,6 +7,8 @@ from config import view_image
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as html
 
+st.set_page_config(page_title="Oil Spill Detector", layout="wide")
+
 with st.sidebar:
     choose = option_menu("Gallery", ["Home", "Oil Spills Near me", "Oil Spills Detection"],
                          icons=[],
@@ -128,7 +130,7 @@ if choose == 'Oil Spills Detection':
     if main_image is not None:
         file_details = {"filename": main_image.name, "filetype": main_image.type,
                         "filesize": main_image.size}
-        st.write(file_details)
+        # st.write(file_details)
         st.image(view_image(main_image), width=400)
         with open(os.path.join("images", main_image.name), "wb") as f:
             f.write((main_image).getbuffer())
