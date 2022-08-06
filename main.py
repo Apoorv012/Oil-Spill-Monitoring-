@@ -6,13 +6,14 @@ from predict import predict_image
 from config import view_image
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as html
+st.set_page_config(page_title="Oil Spill Detector", layout="wide")
 
 with st.sidebar:
     choose = option_menu("Gallery", ["Home", "Oil Spills Near me", "Oil Spills Detection"],
                          icons=[],
                          menu_icon="app-indicator", default_index=0,
                          styles={
-        "container": {"padding": "5!important", "background-color": "#fafafa"},
+        "container": {"padding": "5!important"},
         "icon": {"color": "orange", "font-size": "25px"},
         "nav-link": {"font-size": "16px", "text-align": "left", "margin": "0px", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "#02ab21"},
