@@ -55,7 +55,7 @@ if choose == 'Home':
     - ##### Direct support for oil spill countermeasures
     """)
 
-    col3.image(os.path.join("app", "image2.png"), width=600)
+    col3.image(os.path.join("app", "image2.png"), width=450)
 
     st.markdown(f"<hr style=width:100%;text-align:left;margin-left:0;>",
                 unsafe_allow_html=True)
