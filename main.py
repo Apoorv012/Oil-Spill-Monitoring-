@@ -6,6 +6,7 @@ from predict import predict_image
 from config import view_image
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as html
+st.set_page_config(page_title="Oil Spill Detector", layout="wide")
 
 st.set_page_config(page_title="Oil Spill Detector", layout="wide")
 
@@ -14,7 +15,7 @@ with st.sidebar:
                          icons=[],
                          menu_icon="app-indicator", default_index=0,
                          styles={
-        "container": {"padding": "5!important", "background-color": "#fafafa"},
+        "container": {"padding": "5!important"},
         "icon": {"color": "orange", "font-size": "25px"},
         "nav-link": {"font-size": "16px", "text-align": "left", "margin": "0px", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "#02ab21"},
@@ -56,7 +57,7 @@ if choose == 'Home':
     - ##### Direct support for oil spill countermeasures
     """)
 
-    col3.image(os.path.join("app", "image2.png"), width=600)
+    col3.image(os.path.join("app", "image2.png"), width=375)
 
     st.markdown(f"<hr style=width:100%;text-align:left;margin-left:0;>",
                 unsafe_allow_html=True)
@@ -71,7 +72,7 @@ if choose == 'Home':
     """)
 
     image = Image.open(os.path.join("app", "image3.png"))
-    col2.image(image, width=600)
+    col2.image(image, width=550)
 
 
 if choose == 'Oil Spills Near me':
