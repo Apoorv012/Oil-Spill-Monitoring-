@@ -55,7 +55,7 @@ if choose == 'Home':
     - ##### Direct support for oil spill countermeasures
     """)
 
-    col3.image(os.path.join("app", "image2.png"), width=450)
+    col3.image(os.path.join("app", "image2.png"), width=375)
 
     st.markdown(f"<hr style=width:100%;text-align:left;margin-left:0;>",
                 unsafe_allow_html=True)
@@ -70,7 +70,7 @@ if choose == 'Home':
     """)
 
     image = Image.open(os.path.join("app", "image3.png"))
-    col2.image(image, width=600)
+    col2.image(image, width=550)
 
 
 if choose == 'Oil Spills Near me':
