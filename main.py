@@ -6,7 +6,6 @@ from predict import predict_image
 from config import view_image
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as html
-st.set_page_config(page_title="Oil Spill Detector", layout="wide")
 
 st.set_page_config(page_title="Oil Spill Detector", layout="wide")
 
